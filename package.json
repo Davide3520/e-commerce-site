@@ -2,7 +2,8 @@
   "name": "myJobs",
   "version": "2.0.0",
   "description": "Some boilerplate code to get you started - get shakin'!",
-  "main": "index.js",
+  "private": true,
+  "main": "public/main.js",
   "scripts": {
     "build": "webpack",
     "build:dev": "npm run build -- --watch --mode=development",
@@ -15,7 +16,8 @@
     "test": "NODE_ENV=test JWT=a_secret mocha \"./server/**/*.spec.js\" \"./client/**/*.spec.js\" --require @babel/register --require esm ",
     "test:dev": "npm run test -- --watch",
     "test:dev:models": "npm run test:dev -- --grep=model",
-    "test:dev:routes": "npm run test:dev -- --grep=route"
+    "test:dev:routes": "npm run test:dev -- --grep=route",
+    "electron-dev": "electron ."
   },
   "author": "Fullstack Academy of Code",
   "license": "MIT",
@@ -23,6 +25,7 @@
     "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
     "compression": "^1.7.3",
+    "electron": "^16.0.4",
     "express": "^4.16.4",
     "history": "^4.9.0",
     "jsonwebtoken": "^8.5.1",
