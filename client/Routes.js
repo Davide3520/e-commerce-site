@@ -5,7 +5,7 @@ import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
 import {me} from './store'
 import AllJobs from './components/AllApp'
-
+import NewJobsApp from './components/CreateNewJobs';
 /**
  * COMPONENT
  */
@@ -23,6 +23,7 @@ class Routes extends Component {
           <Switch>
             <Route path="/home" component={Home} />
             <Route path="/applications" component={AllJobs} />
+            <Route path="/new-application" component={NewJobsApp} />
             <Redirect to="/home" />
           </Switch>
         ) : (
