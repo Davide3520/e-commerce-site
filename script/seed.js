@@ -22,7 +22,7 @@ async function seed() {
         return Applications.create(jobsApp)
       })
     )
-      console.log(Object.keys(User.prototype))
+      // console.log(Object.keys(User.prototype)) // magic methods
 
     await Promise.all(apps.map((app)=>
       app.addUser(users[Math.floor(Math.random() * users.length)]) // pick a random users and assign it.
