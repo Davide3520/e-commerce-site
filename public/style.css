@@ -1,5 +1,7 @@
 body {
   font-family: sans-serif;
+  background: #DEB887	;
+
 }
 
 a {
@@ -18,4 +20,51 @@ nav a {
 form div {
   margin: 1em;
   display: inline-block;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 90px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+hr {
+  display: none;
+}
+/* LOGIN FORM */
+
+.login {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 2px solid wheat;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 260px;
+  width: 275px;
+  background-color: wheat;
+  box-shadow: 7px 11px 26px #0c0c0c;
+
+}
+
+.inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border: 2px solid black;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

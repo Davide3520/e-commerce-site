@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import { Link } from 'react-router-dom'
 import {authenticate} from '../store'
 
 /**
@@ -7,27 +8,43 @@ import {authenticate} from '../store'
  */
 const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
-
   return (
-    <div>
-      <form onSubmit={handleSubmit} name={name}>
+    <div className='login'>
+      <div>
+      <form onSubmit={handleSubmit} name={name} className='form'>
         <div>
-          <label htmlFor="username">
+          <label htmlFor="username" >
             <small>Username</small>
           </label>
-          <input name="username" type="text" />
+          <input name="username" type="text" className='inputs'/>
         </div>
         <div>
           <label htmlFor="password">
             <small>Password</small>
           </label>
-          <input name="password" type="password" />
+          <input name="password" type="password" className='inputs'/>
         </div>
+        {name === "signup" ? (
+          <div>
+          <label htmlFor="email">
+            <small>Email</small>
+          </label>
+          <input name="email" type="email" className='inputs'/>
+        </div>
+        ) : ''}
+        {name === 'login' ? (
+          <p>
+          <Link to='/signup'>
+          Don't have an account? Sign up!
+          </Link>
+        </p>
+        ) : ''}
         <div>
           <button type="submit">{displayName}</button>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
+      </div>
     </div>
   )
 }
@@ -58,11 +75,21 @@ const mapSignup = state => {
 const mapDispatch = dispatch => {
   return {
     handleSubmit(evt) {
-      evt.preventDefault()
-      const formName = evt.target.name
-      const username = evt.target.username.value
-      const password = evt.target.password.value
-      dispatch(authenticate(username, password, formName))
+      if (evt.target.name === 'login') {
+        evt.preventDefault()
+        const formName = evt.target.name
+        const username = evt.target.username.value
+        const password = evt.target.password.value
+        dispatch(authenticate(username, password, formName))
+
+      } else {
+        evt.preventDefault()
+        const formName = evt.target.name
+        const username = evt.target.username.value
+        const password = evt.target.password.value
+        const email = evt.target.email.value
+        dispatch(authenticate(username, password, formName, email))
+      }
     }
   }
 }
