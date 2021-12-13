@@ -1,5 +1,7 @@
 body {
   font-family: sans-serif;
+  background: #DEB887	;
+
 }
 
 a {
@@ -40,13 +42,16 @@ hr {
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  border: 2px solid black;
+  border: 2px solid wheat;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   text-align: center;
   height: 260px;
   width: 275px;
+  background-color: wheat;
+  box-shadow: 7px 11px 26px #0c0c0c;
+
 }
 
 .inputs {
