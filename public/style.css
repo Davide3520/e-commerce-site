@@ -24,8 +24,16 @@ form div {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 100px;
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+}
+hr {
+  display: none;
+}
 /* LOGIN FORM */
 
 .login {

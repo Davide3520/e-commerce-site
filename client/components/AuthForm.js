@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import { Link } from 'react-router-dom'
 import {authenticate} from '../store'
 
 /**
@@ -30,6 +31,13 @@ const AuthForm = props => {
           </label>
           <input name="email" type="email" className='inputs'/>
         </div>
+        ) : ''}
+        {name === 'login' ? (
+          <p>
+          <Link to='/signup'>
+          Don't have an account? Sign up!
+          </Link>
+        </p>
         ) : ''}
         <div>
           <button type="submit">{displayName}</button>
