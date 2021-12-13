@@ -19,3 +19,39 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LOGIN FORM */
+
+.login {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 2px solid black;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 260px;
+  width: 275px;
+}
+
+.inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border: 2px solid black;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
