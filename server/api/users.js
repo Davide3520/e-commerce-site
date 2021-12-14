@@ -1,5 +1,8 @@
 const router = require('express').Router()
-const { models: { User }} = require('../db')
+const { application } = require('express')
+const { connect } = require('react-redux')
+const jobApp = require('../../script/Application')
+const { models: { User, Applications }} = require('../db')
 module.exports = router
 
 router.get('/', async (req, res, next) => {
@@ -13,5 +16,33 @@ router.get('/', async (req, res, next) => {
     res.json(users)
   } catch (err) {
     next(err)
+  }
+})
+
+/*
+[
+  '_customGetters',    '_customSetters',
+  'validators',        '_hasCustomGetters',
+  '_hasCustomSetters', 'rawAttributes',
+  '_isAttribute',      'correctPassword',
+  'generateToken',     'getApplications',
+  'countApplications', 'hasApplication',
+  'hasApplications',   'setApplications',
+  'addApplication',    'addApplications',
+  'removeApplication', 'removeApplications',
+  'createApplication'
+]
+
+
+*/
+
+router.get('/:userId', async (req, res, next) => {
+  try{
+    const user = await User.findByPk(req.params.userId)
+    console.log(user)
+    const jobsApp = await user.getApplications()
+    res.send(jobsApp)
+  }catch(e) {
+    next(e);
   }
 })
