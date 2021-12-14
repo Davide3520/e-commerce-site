@@ -9,24 +9,25 @@ import {authenticate} from '../store'
 const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
   return (
+    <div className='ex'>
     <div className='login'>
       <div>
       <form onSubmit={handleSubmit} name={name} className='form'>
         <div>
-          <label htmlFor="username" >
+          <label htmlFor="username" className='label'>
             <small>Username</small>
           </label>
           <input name="username" type="text" className='inputs'/>
         </div>
         <div>
-          <label htmlFor="password">
+          <label htmlFor="password" className='label'>
             <small>Password</small>
           </label>
           <input name="password" type="password" className='inputs'/>
         </div>
         {name === "signup" ? (
           <div>
-          <label htmlFor="email">
+          <label htmlFor="email" className='label'>
             <small>Email</small>
           </label>
           <input name="email" type="email" className='inputs'/>
@@ -45,6 +46,7 @@ const AuthForm = props => {
         {error && error.response && <div> {error.response.data} </div>}
       </form>
       </div>
+    </div>
     </div>
   )
 }

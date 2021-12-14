@@ -44,3 +44,12 @@ router.get('/:userId', async (req, res, next) => {
     next(e);
   }
 })
+
+router.post('/create', async (req, res, next) => {
+  try {
+    const newApplication = await Applications.create(req.body);
+    res.send(newApplication);
+  } catch (error) {
+    next(error);
+  }
+})

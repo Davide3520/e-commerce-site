@@ -6,6 +6,8 @@ body {
 
 a {
   text-decoration: none;
+  font-family: monospace;
+  color: black;
 }
 
 label {
@@ -15,6 +17,9 @@ label {
 nav a {
   display: inline-block;
   margin: 1em;
+  font-family: monospace;
+  color: black;
+  font-size: large;
 }
 
 form div {
@@ -26,7 +31,7 @@ form div {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 165px;
+  margin-top: 100px;
 }
 
 nav {
@@ -92,6 +97,7 @@ hr {
 }
 
 h4 {
+  height: 28px;
   font-family: 'revert';
   font-size: 21px;
   font-weight: 100;
@@ -99,8 +105,63 @@ h4 {
   background-color: beige;
   text-align: center;
   border-radius: 6px;
+  border: solid;
+  border-width: 1px;
 }
 
-p {
+.infoP {
+  display: flex;
+  border: solid;
+  height: 42px;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 186px;
+  border-width: thin;
+  border-radius: 20px;
   text-align: center;
+  font-family: monospace;
+}
+
+.url {
+  display: flex;
+  border: solid;
+  color: black;
+  border-width: thin;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 33px;
+  width: 200px;
+  border-radius: inherit;
+}
+
+.ex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  color: black;
+}
+
+.title {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 64px;
+  color: wheat;
+  font-family: monospace;
+  letter-spacing: 1.5px;
+  margin-top: -7px;
+  border-color: black;
+}
+
+.label {
+  color: black;
+  font-family: monospace;
+  font-size: large;
 }

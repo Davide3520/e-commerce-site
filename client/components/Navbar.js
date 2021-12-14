@@ -1,25 +1,25 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import {logout} from '../store'
 
 const Navbar = ({handleClick, isLoggedIn}) => (
   <div>
+    <h1 className='title'>{isLoggedIn ? 'myJobs' : 'Welcome to myJobs!'}</h1>
     <nav>
       {isLoggedIn ? (
-        <div>
+        <div className='ex'>
           {/* The navbar will show these links after you log in */}
-          <Link to="/home">Home</Link>
-          <Link to="/applications">Applications</Link>
-          <Link to="/new-application">Add a new Application</Link>
-          <a href="#" onClick={handleClick}>
+          <Link to="/">Applications</Link>
+          <Link to="/new">Add a new Application</Link>
+          <a className='ex' href="#" onClick={handleClick}>
             Logout
           </a>
         </div>
       ) : (
         <div>
           {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
+          <Link to="/login"><p className='ex'>Login</p></Link>
         </div>
       )}
     </nav>

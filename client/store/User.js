@@ -1,11 +1,19 @@
 import axios from "axios";
 
 const FETCH_APPLICATIONS = "FETCH_APPLICATIONS";
+const NEW_APPLICATION = "NEW_APPLICATION";
 
 const fetchApp = (app) => {
   return {
     type: FETCH_APPLICATIONS,
     apps: app
+  }
+}
+
+const newApp = (app) => {
+  return {
+    type: NEW_APPLICATION,
+    newApplication: app
   }
 }
 
@@ -22,10 +30,26 @@ export const fetchUserApp = (userId) => {
   }
 }
 
+export const fetchNewApp = (appl) => {
+  return async (dispatch) => {
+    try {
+      const newResponse = await axios.post('/api/users/create',appl);
+      const result = newResponse.data;
+      dispatch(newApp(result));
+
+    } catch (error) {
+      console.log('Sorry',error);
+    }
+  }
+}
+
+
 export default function appReducer(state = [], action) {
   switch(action.type) {
     case FETCH_APPLICATIONS:
       return action.apps;
+    case NEW_APPLICATION:
+      return [...state, action.newApplication]
     default:
     return state;
   }

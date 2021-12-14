@@ -17,15 +17,15 @@ const AllJobs = (props) => {
             apps.map(app =>
               <div key={app.id} className="info">
                 <h4>Company Name</h4>
-               <p>{app.companyName}</p>
+               <p className="infoP">{app.companyName}</p>
                 <h4>Date</h4>
-                <p>{app.createdAt.slice(0, 10)}</p>
+                <p className="infoP">{app.createdAt.slice(0, 10)}</p>
                 <h4>Application Link</h4>
-                <a href={app.companyUrl}>{app.companyUrl}</a>
+                <a className="url" href={app.companyUrl}>{app.companyUrl}</a>
                 <h4>Position title</h4>
-                <p>{app.positionTitle}</p>
+                <p className="infoP">{app.positionTitle}</p>
                 <h4>Response</h4>
-                <p>{app.response === true ? 'Yes' : 'No'}</p>
+                <p className="infoP">{app.response === true ? 'Yes' : 'No'}</p>
               </div>
             )
           ) : ''}
