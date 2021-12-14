@@ -11,13 +11,13 @@ const Applications = db.define('applications', {
     validate: {
       isUrl: true
     },
-    positionTitle: {
-      type: Sequelize.STRING,
-    },
-    response: {
-      type: Sequelize.BOOLEAN,
-      defaultValue: false
-    }
+  },
+  positionTitle: {
+    type: Sequelize.STRING,
+  },
+  response: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
   }
 })
 

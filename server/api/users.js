@@ -39,7 +39,6 @@ router.get('/', async (req, res, next) => {
 router.get('/:userId', async (req, res, next) => {
   try{
     const user = await User.findByPk(req.params.userId)
-    console.log(user)
     const jobsApp = await user.getApplications()
     res.send(jobsApp)
   }catch(e) {
