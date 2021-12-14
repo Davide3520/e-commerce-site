@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const { application } = require('express')
-const { connect } = require('react-redux')
 const jobApp = require('../../script/Application')
 const { models: { User, Applications }} = require('../db')
 module.exports = router
