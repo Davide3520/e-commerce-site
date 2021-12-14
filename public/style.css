@@ -141,7 +141,7 @@ h4 {
 
 .ex {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   color: black;
