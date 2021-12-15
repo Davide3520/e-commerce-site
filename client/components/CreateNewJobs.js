@@ -2,14 +2,13 @@ import React, {useState} from "react";
 import { fetchNewApp } from "../store/User";
 import { connect } from "react-redux";
 
-
 class NewJobsApp extends React.Component {
   constructor() {
     super()
     this.state = {
-      companyName: "",
-      companyUrl: "",
-      positionTitle: "",
+      companyName: '',
+      companyUrl: '',
+      positionTitle: '',
       response: false,
     }
     this.handleChange = this.handleChange.bind(this);
@@ -17,9 +16,10 @@ class NewJobsApp extends React.Component {
   }
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target.name] : event.target.value
     })
   }
+
   handleSubmit(event) {
     event.preventDefault();
     this.props.create({ ...this.state });
@@ -27,38 +27,35 @@ class NewJobsApp extends React.Component {
       companyName: "",
       companyUrl: "",
       positionTitle: "",
-      response: false,
     })
   }
 
   render() {
-    const {companyName, companyUrl, positionTitle, response} = this.state;
+
+    const {companyName, companyUrl, positionTitle} = this.state;
     const {handleChange, handleSubmit} = this;
     return (
       <form onSubmit={handleSubmit}>
         <label htmlFor="companyName">Company Name:</label>
         <input
-        type="text"
+        name="companyName"
         onChange={handleChange}
-        value={companyName}/>
+        value={companyName || ''}
+        />
 
         <label htmlFor="companyUrl">Application Link:</label>
         <input
         type="url"
+        name="companyUrl"
         onChange={handleChange}
-        value={companyUrl}/>
+        value={companyUrl || ''}/>
 
         <label htmlFor="positionTitle">Position Title:</label>
         <input
         type="text"
+        name="positionTitle"
         onChange={handleChange}
-        value={positionTitle}/>
-
-        <label htmlFor="response">Response:</label>
-        <input
-        type="checkbox"
-        onChange={handleChange}
-        value={response}/>
+        value={positionTitle || ''}/>
 
         <div>
           <button>Submit</button>

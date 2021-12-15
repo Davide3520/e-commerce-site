@@ -47,8 +47,10 @@ router.get('/:userId', async (req, res, next) => {
 
 router.post('/create', async (req, res, next) => {
   try {
-    const newApplication = await Applications.create(req.body);
-    res.send(newApplication);
+    const user = await User.findByToken(req.body.headers.authorization)
+    const newApplication = await Applications.create(req.body.appl);
+    const result = await user.addApplication(newApplication)
+    res.send(result);
   } catch (error) {
     next(error);
   }
