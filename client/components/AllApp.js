@@ -19,7 +19,7 @@ const AllJobs = (props) => {
                 <h4>Company Name</h4>
                <p className="infoP">{app.companyName}</p>
                 <h4>Date</h4>
-                <p className="infoP"></p>
+                <p className="infoP"> placeholder  </p>
                 <h4>Application Link</h4>
                 <a className="url" href={app.companyUrl}>{app.companyUrl}</a>
                 <h4>Position title</h4>
