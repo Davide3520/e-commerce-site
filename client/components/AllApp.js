@@ -20,7 +20,7 @@ const AllJobs = (props) => {
                 </section>
                 <section className="info-line">
                   <p>Date</p>
-                  <p className="infoP"> placeholder</p>
+                  <p className="infoP">{app.createdAt ? app.createdAt.slice(0, 10) : ""}</p>
                 </section>
                 <section className="info-line">
                   <p>Application Link</p>
