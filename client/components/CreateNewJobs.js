@@ -38,9 +38,11 @@ class NewJobsApp extends React.Component {
     const {companyName, companyUrl, positionTitle, location} = this.state;
     const {handleChange, handleSubmit} = this;
     return (
-      <form onSubmit={handleSubmit}>
+    <div className="form-container">
+      <form onSubmit={handleSubmit} className="form">
         <label htmlFor="companyName">Company Name:</label>
         <input
+        className="input-form"
         name="companyName"
         onChange={handleChange}
         value={companyName || ''}
@@ -48,6 +50,7 @@ class NewJobsApp extends React.Component {
 
         <label htmlFor="companyUrl">Application Link:</label>
         <input
+        className="input-form"
         type="url"
         name="companyUrl"
         onChange={handleChange}
@@ -57,6 +60,7 @@ class NewJobsApp extends React.Component {
 
         <label htmlFor="positionTitle">Position Title:</label>
         <input
+        className="input-form"
         type="text"
         name="positionTitle"
         onChange={handleChange}
@@ -64,6 +68,7 @@ class NewJobsApp extends React.Component {
 
         <label htmlFor="location">Location:</label>
         <input
+        className="input-form"
         type="text"
         name="location"
         onChange={handleChange}
@@ -71,9 +76,11 @@ class NewJobsApp extends React.Component {
         />
 
         <div>
-          <button>Submit</button>
+          <button className="form-button">Submit</button>
+          <Link to='/'><button className="form-button">All My Applications</button></Link>
         </div>
       </form>
+    </div>
     )
   }
 }
