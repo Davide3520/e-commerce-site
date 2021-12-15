@@ -1,7 +1,6 @@
 import React, {useEffect, useMemo} from "react";
 import { fetchUserApp } from "../store/User";
 import { connect } from "react-redux";
-import { useTable } from 'react-table'
 
 const AllJobs = (props) => {
   useEffect(() => {
@@ -10,26 +9,37 @@ const AllJobs = (props) => {
   },[])
 
   const { apps } = props;
-  console.log(apps)
   return (
       <div  className="container">
           {apps.length ? (
-            apps.map(app =>
-              <div key={app.id} className="info">
-                <h4>Company Name</h4>
-               <p className="infoP">{app.companyName}</p>
-                <h4>Date</h4>
-                <p className="infoP"> placeholder  </p>
-                <h4>Application Link</h4>
-                <a className="url" href={app.companyUrl}>{app.companyUrl}</a>
-                <h4>Position title</h4>
-                <p className="infoP">{app.positionTitle}</p>
-                <h4>Location</h4>
-                <p className="infoP">{app.location}</p>
-                <h4>Response</h4>
-                <p className="infoP">{app.response === true ? 'Yes' : 'No'}</p>
-              </div>
-            )
+            apps.map((app, i) => (
+              <div key={i} className="info">
+                <section className="info-line">
+                  <p>Company Name</p>
+                  <p className="infoP">{app.companyName}</p>
+                </section>
+                <section className="info-line">
+                  <p>Date</p>
+                  <p className="infoP"> placeholder</p>
+                </section>
+                <section className="info-line">
+                  <p>Application Link</p>
+                  <a className="url" href={app.companyUrl}>Click Here</a>
+                </section>
+                <section className="info-line">
+                  <p>Position Title</p>
+                  <p className="infoP">{app.positionTitle}</p>
+                </section>
+                <section className="info-line">
+                  <p>Location</p>
+                  <p className="infoP">{app.location}</p>
+                </section>
+                <section className="info-line">
+                  <p>Response</p>
+                  <p className="infoP">{app.response === true ? 'Yes' : 'No'}</p>
+                </section>
+               </div>
+            ))
           ) : ''}
       </div>
   )

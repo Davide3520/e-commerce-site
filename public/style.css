@@ -86,57 +86,44 @@ hr {
 }
 
 .info {
-  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  justify-content: space-between;
   border: 2px solid black;
   border-radius: 20px;
-  height: fit-content;
-  width: fit-content;
-  margin: 20px;
   background-color: wheat;
-  margin-top: 60px;
 }
 
-h4 {
-  height: 28px;
-  font-family: 'revert';
-  font-size: 21px;
-  font-weight: 100;
-  letter-spacing: 1.5px;
-  background-color: beige;
-  text-align: center;
-  border-radius: 6px;
-  border: solid;
-  border-width: 1px;
+.info-line {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+a:hover {
+  color: purple;
 }
 
 .infoP {
-  display: flex;
-  border: solid;
-  height: 42px;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  width: 186px;
-  border-width: thin;
-  border-radius: 20px;
-  text-align: center;
   font-family: monospace;
+  text-align: center;
+  width: 220px;
 }
 
 .url {
   display: flex;
-  border: solid;
-  color: black;
-  border-width: thin;
-  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   align-content: center;
-  height: 33px;
+  justify-content: space-evenly;
+}
+
+.info-line a {
+  text-align: center;
   width: 200px;
-  border-radius: inherit;
 }
 
 .ex {

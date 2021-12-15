@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { fetchNewApp } from "../store/User";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class NewJobsApp extends React.Component {
   constructor() {
@@ -10,6 +11,7 @@ class NewJobsApp extends React.Component {
       companyUrl: '',
       positionTitle: '',
       response: false,
+      location: '',
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,12 +29,13 @@ class NewJobsApp extends React.Component {
       companyName: "",
       companyUrl: "",
       positionTitle: "",
+      location:''
     })
   }
 
   render() {
 
-    const {companyName, companyUrl, positionTitle} = this.state;
+    const {companyName, companyUrl, positionTitle, location} = this.state;
     const {handleChange, handleSubmit} = this;
     return (
       <form onSubmit={handleSubmit}>
@@ -48,7 +51,9 @@ class NewJobsApp extends React.Component {
         type="url"
         name="companyUrl"
         onChange={handleChange}
-        value={companyUrl || ''}/>
+        value={companyUrl || ''}
+        maxLength="30"
+        />
 
         <label htmlFor="positionTitle">Position Title:</label>
         <input
@@ -56,6 +61,14 @@ class NewJobsApp extends React.Component {
         name="positionTitle"
         onChange={handleChange}
         value={positionTitle || ''}/>
+
+        <label htmlFor="location">Location:</label>
+        <input
+        type="text"
+        name="location"
+        onChange={handleChange}
+        value={location || ''}
+        />
 
         <div>
           <button>Submit</button>
