@@ -4,10 +4,10 @@ const db = require('../db')
 const Applications = db.define('applications', {
   companyName: {
     type: Sequelize.STRING,
-    allowNull: false
+
   },
   companyUrl: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     validate: {
       isUrl: true
     },
@@ -18,6 +18,9 @@ const Applications = db.define('applications', {
   response: {
     type: Sequelize.BOOLEAN,
     defaultValue: false
+  },
+  location: {
+    type: Sequelize.STRING
   }
 })
 

@@ -1,25 +1,27 @@
 import React, {useState} from "react";
 import { fetchNewApp } from "../store/User";
 import { connect } from "react-redux";
-
+import { Link } from "react-router-dom";
 
 class NewJobsApp extends React.Component {
   constructor() {
     super()
     this.state = {
-      companyName: "",
-      companyUrl: "",
-      positionTitle: "",
+      companyName: '',
+      companyUrl: '',
+      positionTitle: '',
       response: false,
+      location: '',
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target.name] : event.target.value
     })
   }
+
   handleSubmit(event) {
     event.preventDefault();
     this.props.create({ ...this.state });
@@ -27,38 +29,46 @@ class NewJobsApp extends React.Component {
       companyName: "",
       companyUrl: "",
       positionTitle: "",
-      response: false,
+      location:''
     })
   }
 
   render() {
-    const {companyName, companyUrl, positionTitle, response} = this.state;
+
+    const {companyName, companyUrl, positionTitle, location} = this.state;
     const {handleChange, handleSubmit} = this;
     return (
       <form onSubmit={handleSubmit}>
         <label htmlFor="companyName">Company Name:</label>
         <input
-        type="text"
+        name="companyName"
         onChange={handleChange}
-        value={companyName}/>
+        value={companyName || ''}
+        />
 
         <label htmlFor="companyUrl">Application Link:</label>
         <input
         type="url"
+        name="companyUrl"
         onChange={handleChange}
-        value={companyUrl}/>
+        value={companyUrl || ''}
+        maxLength="30"
+        />
 
         <label htmlFor="positionTitle">Position Title:</label>
         <input
         type="text"
+        name="positionTitle"
         onChange={handleChange}
-        value={positionTitle}/>
+        value={positionTitle || ''}/>
 
-        <label htmlFor="response">Response:</label>
+        <label htmlFor="location">Location:</label>
         <input
-        type="checkbox"
+        type="text"
+        name="location"
         onChange={handleChange}
-        value={response}/>
+        value={location || ''}
+        />
 
         <div>
           <button>Submit</button>

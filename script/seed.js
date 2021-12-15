@@ -24,17 +24,17 @@ async function seed() {
     )
       console.log(Object.keys(User.prototype)) // magic methods
 
-    // await Promise.all(users.map((user)=>
-    //   user.addApplication(apps[Math.floor(Math.random() * apps.length)])
-    // ))
+    await Promise.all(users.map((user)=>
+      user.addApplication(apps[Math.floor(Math.random() * apps.length)])
+    ))
 
-    await users[0].addApplication(apps[0])
-    await users[0].addApplication(apps[1])
-    await users[0].addApplication(apps[2])
+    // await users[0].addApplication(apps[0])
+    // await users[0].addApplication(apps[1])
+    // await users[0].addApplication(apps[2])
 
-    await users[1].addApplication(apps[0])
-    await users[1].addApplication(apps[1])
-    await users[1].addApplication(apps[2])
+    // await users[1].addApplication(apps[0])
+    // await users[1].addApplication(apps[1])
+    // await users[1].addApplication(apps[2])
 
     console.log(`seeded ${users.length} users`)
     console.log(`seeded successfully`)
