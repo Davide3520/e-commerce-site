@@ -35,7 +35,6 @@ export const fetchNewApp = (appl) => {
   return async (dispatch) => {
     try {
       const token = window.localStorage.getItem(TOKEN);
-      console.log(token)
       if (token) {
         const newResponse = await axios.post(`/api/users/create`,{
           headers: {
