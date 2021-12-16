@@ -1,8 +1,10 @@
 import React, {useEffect, useMemo, useState} from "react";
 import { fetchUserApp } from "../store/User";
 import { connect } from "react-redux";
+import ToggleButton from "react-toggle-button";
 
 const AllJobs = (props) => {
+  const [stat, setStat] = useState(false)
 
   useEffect(() => {
     const id = props.user.id;
@@ -37,7 +39,7 @@ const AllJobs = (props) => {
                 </section>
                 <section className="info-line">
                   <p>Response</p>
-                  <p className="infoP">{app.response === true ? 'Yes' : 'No'}</p>
+                  <button onClick={() => (!app.response)} className="infoP">{app.response === true ? "Yes": "No"}</button>
                 </section>
                </div>
             ))
