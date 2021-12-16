@@ -1,8 +1,10 @@
-import React, {useEffect, useMemo} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import { fetchUserApp } from "../store/User";
 import { connect } from "react-redux";
+import ToggleButton from "react-toggle-button";
 
 const AllJobs = (props) => {
+
   useEffect(() => {
     const id = props.user.id;
     props.fetchApps(id)
@@ -20,7 +22,7 @@ const AllJobs = (props) => {
                 </section>
                 <section className="info-line">
                   <p>Date</p>
-                  <p className="infoP"> placeholder</p>
+                  <p className="infoP">{app.createdAt ? app.createdAt.slice(0, 10) : ""}</p>
                 </section>
                 <section className="info-line">
                   <p>Application Link</p>
@@ -34,10 +36,10 @@ const AllJobs = (props) => {
                   <p>Location</p>
                   <p className="infoP">{app.location}</p>
                 </section>
-                <section className="info-line">
+                {/* <section className="info-line">
                   <p>Response</p>
-                  <p className="infoP">{app.response === true ? 'Yes' : 'No'}</p>
-                </section>
+                  <p className="infoP"></p>
+                </section> */}
                </div>
             ))
           ) : ''}
