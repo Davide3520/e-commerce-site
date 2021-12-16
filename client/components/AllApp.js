@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import ToggleButton from "react-toggle-button";
 
 const AllJobs = (props) => {
-  const [stat, setStat] = useState(false)
 
   useEffect(() => {
     const id = props.user.id;
@@ -37,10 +36,10 @@ const AllJobs = (props) => {
                   <p>Location</p>
                   <p className="infoP">{app.location}</p>
                 </section>
-                <section className="info-line">
+                {/* <section className="info-line">
                   <p>Response</p>
-                  <button onClick={() => (!app.response)} className="infoP">{app.response === true ? "Yes": "No"}</button>
-                </section>
+                  <p className="infoP"></p>
+                </section> */}
                </div>
             ))
           ) : ''}
