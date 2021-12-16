@@ -13,8 +13,12 @@ User can store any jobs applications in myJobs and be able to see all of them at
  - [Express]
  - [Node.js]
 
+## Deployed Application
+https://my-jobs-23.herokuapp.com/login#
 
 ## Author
 
 Davide Lepri
+
 https://www.linkedin.com/in/davide-lepri-03/
+
