@@ -5,7 +5,7 @@
 
 ## introduction
 
-User can store any jobs applications in myJobs and be able to see all of them at any time.
+User can store any jobs applications in myJobs and be able to see all of them at any time
 
 ## Technology used
  - [Sequelize]
